@@ -49,3 +49,10 @@ data.forEach((opportunity) => {
         <p>${opportunity.description}</p>
         <button class="save-btn">Save</button>
     `;
+    // Save button functionality
+            card.querySelector(".save-btn").addEventListener("click", () => {
+                alert(`Saved "${opportunity.title}" to your list!`);
+            });
+
+            opportunityList.appendChild(card);
+
