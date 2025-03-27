@@ -7,14 +7,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let opportunities = [];
 
-    // Initialize Leaflet map
-    const map = L.map("map").setView([0, 0], 2); // Default world view
+    
+    const map = L.map("map").setView([0, 0], 2); 
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    // Fetch opportunities from JSON server
+    
     fetch(API_URL)
         .then((response) => {
             if (!response.ok) {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderOpportunities(filtered);
     });
 
-    // Filter by sector
+    // Filter by sector am so good at this
     filterSelect.addEventListener("change", () => {
         const sector = filterSelect.value;
         const filtered = sector
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderOpportunities(filtered);
     });
 
-    // Dark mode toggle
+    // Dark mode toggle type shii
     toggleModeBtn.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         toggleModeBtn.textContent = document.body.classList.contains("dark-mode")
