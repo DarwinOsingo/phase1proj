@@ -55,4 +55,21 @@ data.forEach((opportunity) => {
             });
 
             opportunityList.appendChild(card);
-
+            // Search functionality
+            searchInput.addEventListener("input", () => {
+                const query = searchInput.value.toLowerCase();
+                const filtered = opportunities.filter((o) =>
+                    o.title.toLowerCase().includes(query)
+                );
+                renderOpportunities(filtered);
+            });
+        
+            // Filter by sector
+            filterSelect.addEventListener("change", () => {
+                const sector = filterSelect.value;
+                const filtered = sector
+                    ? opportunities.filter((o) => o.sector === sector)
+                    : opportunities;
+                renderOpportunities(filtered);
+            });
+        
